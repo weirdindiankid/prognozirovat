@@ -77,6 +77,7 @@ def main():
 '''
 if __name__ == '__main__':
     # main()
-    ctnlist = list(test.fillna(-32))
-    scores_csv = np.asarray(list(map(getScoreForPair, ctnlist)))
+    
+ctnlist = list(test.fillna(-32))
+scores_csv = np.asarray(list(map(getScoreForPair, ctnlist)))
 np.savetxt(OUTPUT_PATH + "scores.csv", scores_csv, delimiter=",")
