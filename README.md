@@ -1,0 +1,2 @@
+# prognozirovat
+Binary classification model.
