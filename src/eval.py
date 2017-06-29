@@ -54,11 +54,16 @@ path_threshold = 4
 # Haven't figured out how to add headers, so I will manually add those after the CSV is written.
 finalDict = {}
 
+flipVal = 0
 for k,v in spath.items():
 	if v < path_threshold:
 		finalDict[k] = 1
 	else:
-		finalDict[k] = 0
+		if v == 10000:
+			finalDict[k] = flipVal
+			flipVal = abs(flipVal - 1)
+		else:
+			finalDict[k] = 0
 
 # Write this out to my CSV
 with open(OUTPUT_PATH + "edge_predict.csv", "w") as cfile:
